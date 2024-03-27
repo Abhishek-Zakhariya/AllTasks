@@ -64,7 +64,7 @@ function route(app, conn, md5) {
 
         let email = req.body.email;
         let pass = req.body.pass;
-
+        let a = false;
 
         let pro = new Promise((resolve, reject) => {
             let sql = `select * from users where email = '${email}'`;
@@ -77,14 +77,15 @@ function route(app, conn, md5) {
         pro.then((result) => {
             let encPass = md5(pass + result[0].salt);
             if (result[0].pass == encPass && result[0].activeUser == 1) {
+                a = true;
                 console.log("matched");
-
             }
             else {
                 console.log("Unmatched");
-
+                a = false;
             }
-        })
+            res.send({ a: a })
+        });
     });
 
     app.get('/welcome/:key', (req, res) => {
@@ -144,6 +145,14 @@ function route(app, conn, md5) {
         }, 10000);
         res.send({ key: key, delLink: delLink });
     });
+
+    app.get('/deshboard', async (req, res) => {
+        res.render('deshboard');
+    })
+
+    app.get('/tic_tac_toe', (req, res) => {
+        res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/tic_tac_toe/tic_tac_toe.html");
+    })
 
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

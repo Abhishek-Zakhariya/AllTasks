@@ -1,0 +1,16 @@
+table tr td{
+    height: 100px;
+    width: 100px;
+}
+table tr td button{
+    height: 100px;
+    width: 100px;
+}   
+
+button{
+    height: 40px;
+    width: 80px;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+}

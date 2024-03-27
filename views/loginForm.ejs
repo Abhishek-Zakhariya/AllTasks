@@ -67,8 +67,11 @@
         }
       });
 
-      if (data.ok) {
-        window.location.href = 'http://localhost:7700/';
+
+      let data1 = await data.json();
+
+      if (data1.a == true) {
+        window.location.href = 'http://localhost:7700/deshboard';
       } else {
         window.location.href = 'http://localhost:7700/login';
       }
