@@ -170,6 +170,10 @@ function route(app, conn, md5) {
         res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment2/index.html')
     })
 
+    app.get('/HireX', (req, res) => {
+        res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment3/index.html')
+    })
+
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
