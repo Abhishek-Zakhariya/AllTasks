@@ -1,0 +1,485 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+* {
+    margin: 0% auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+/* header {
+    border: 1px solid black;
+} */
+
+.header {
+    display: flex;
+}
+
+.header div {
+    width: 30% 70%;
+}
+
+.logo {
+    padding: 30px 10px 20px 10px;
+}
+
+nav {
+    height: 70px;
+    padding: 40px 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    padding: 0 10px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0A2259;
+}
+
+.btn {
+    height: 40px;
+    width: 90px;
+    background-color: transparent;
+    color: #0A2259;
+    border: 1px solid #6A88B6;
+}
+
+
+
+/* section1 */
+.section1 {
+    padding: 20px;
+}
+
+.sub-sec {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    width: 55%;
+}
+
+.col h1 {
+    font-size: 60px;
+    padding: 80px;
+    color: #0A2259;
+}
+
+.col p {
+    padding: 0 0 0 80px;
+    color: #0A2259;
+}
+
+.btn1 {
+    display: flex;
+    padding: 40px 0 0 60px;
+}
+
+.fbtn {
+    width: 170px;
+    height: 50px;
+    background-color: #F2A33A;
+    color: white;
+    border: 0;
+    font-size: medium;
+}
+
+.sbtn {
+    font-size: medium;
+    margin-right: 200px;
+    border: 1px solid #0A2259;
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    color: #0A2259;
+}
+
+.img {
+    padding: 100px 0 0 0;
+}
+
+.arrow {
+    padding: 50px;
+}
+
+
+
+/* Section2 */
+/* .section2 {
+    padding: 20px;
+}  */
+
+.companies {
+    display: flex;
+    padding: 10px 20px 0% 0%;
+}
+
+.p {
+    width: 35%;
+    padding: 10px 220px 0 65px;
+}
+
+.companies div p {
+    font-size: small;
+
+}
+
+.imgs {
+    width: 65%;
+}
+
+.companies div img {
+    height: 50px;
+    width: 130px;
+    padding: 10px 0 0 0;
+}
+
+
+/* section3 */
+
+.section3 {
+    padding: 100px;
+    margin: 0 auto;
+}
+
+.sec3 {
+    display: flex;
+}
+
+.sec3 .img {
+    padding: 0px 40px 0px 0px;
+    width: 50%;
+}
+
+.txt {
+    width: 50%;
+}
+
+.tag h1 {
+    font-size: 35px;
+    padding: 0 0 40px 50px;
+    color: #0A2259;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.func {
+    padding: 10px 20px 0px 20px;
+    width: 50%;
+}
+
+
+.func h3 {
+    padding: 0 0 20px 30px;
+    color: #6A88B6;
+}
+
+.func p {
+    padding: 0 0 20px 30px;
+    color: #AAAAAA;
+}
+
+
+
+/* Section4 */
+
+.section4 {
+    padding: 100px;
+    margin: 0 auto;
+}
+
+.sec4_1 {
+    width: 1000px;
+    height: 100px;
+    text-align: center;
+    font-size: 38px;
+}
+
+.sec4_1 h1 {
+    color: #0A2259;
+}
+
+.sec4_2 {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 0 0 0;
+}
+
+.card {
+    background-color: white;
+    width: 23%;
+    padding: 20px 5px 5px 5px;
+    height: 400px;
+}
+
+.servh3 {
+    margin-top: 15px;
+    color: #6A88B6;
+    align-items: center;
+}
+
+.serv_p,
+h3 {
+    color: #6A88B6;
+}
+
+.card:hover .subs button {
+    background-color: #F2A33A;
+    color: white;
+    border: 0;
+}
+
+.card:hover {
+    background-color: #0A2259;
+}
+
+.card:hover .subsh2 {
+    color: white;
+}
+
+.card:hover .serv_p {
+    color: white;
+}
+
+.card:hover .servs {
+    background-color: #6A88B6;
+}
+
+.card:hover .servh3 {
+    color: white;
+}
+
+.servs {
+    background-color: white;
+    height: 50%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.subs {
+    padding: 10px;
+    text-align: center;
+    height: 80px;
+    /* border: 1px solid black; */
+}
+
+.subs button {
+    background-color: transparent;
+    border-color: #0A2259;
+    margin-top: 40px;
+    height: 50px;
+    width: 90%;
+}
+
+.subs h2 {
+    width: 90%;
+    font-size: 100px;
+    color: #0A2259;
+    font-size: xx-large;
+    padding: 15px 5px 5px 0;
+}
+
+
+
+
+/* Section5 */
+
+.section5 {
+    padding: 100px;
+    margin: 50px auto;
+}
+
+.subclass {
+    width: 1200px;
+    display: flex;
+}
+
+.techs {
+    width: 30%;
+    margin-left: 0%;
+}
+
+
+.icons {
+    padding: 10px 10px 60px 0px;
+    gap: 10px;
+    color: #6A88B6;
+    align-items: center;
+    width: 200px;
+    display: flex;
+    margin-left: 0%;
+}
+
+
+.details {
+
+    width: 60%;
+}
+
+
+/* Slider */
+
+.section6 {
+    padding: 40px;
+    /* margin: 50px auto; */
+}
+
+
+.slider_head {
+
+    display: flex;
+}
+
+.slider_head div {
+    margin: 0%;
+    align-items: baseline;
+}
+
+
+.row_1 {
+    padding: 100px 0 0 0;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
+
+.card1 {
+    text-align: center;
+    /* height: 80px; */
+}
+
+.card1-1 {
+    width: 300px;
+}
+
+.pro_pic {
+    padding: 5px 0 0 0;
+}
+
+.stars {
+    padding: 10px 5px 10px 5px;
+}
+
+.designation {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+
+
+/* Section 7 */
+
+.section7 {
+    padding: 100px;
+    margin: 250px 0 0 0;
+}
+
+.sub_container {
+    display: flex;
+    gap: 60px;
+}
+
+.text {
+    /* border: 1px solid black; */
+    width: 50%;
+    margin: 0%;
+}
+
+.text h1 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.text p {
+    padding: 30px 0 10px 0;
+}
+
+.btn_1 {
+    background-color: transparent;
+    border-color: #0A2259;
+    margin: 40px 20px 10px 0px;
+    height: 50px;
+    width: 30%;
+    border: 0;
+    font-weight: 400;
+    color: white;
+    background-color: #F2A33A;
+}
+
+.btn_2 {
+    background-color: transparent;
+    border-color: #6A88B6;
+    margin: 40px 20px 10px 0px;
+    height: 50px;
+    width: 30%;
+    font-weight: 400;
+    color: #0A2259;
+
+}
+
+.pic {
+    padding: 0% 0% 0% 40px;
+    width: 50%;
+    padding-bottom: 25px;
+}
+
+.pic img {
+    height: 400px;
+    width: auto;
+}
+
+
+/* footer */
+footer {
+    background-color: #0A2259;
+    padding: 30px;
+}
+
+
+.subfooter {
+    display: flex;
+}
+
+.media {
+    color: #6A88B6;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.media i {
+    color: white;
+    padding: 10px 0 0 10px;
+}
+
+.large {
+    font-size: 20px;
+    padding: 0px 0px 15px 0px;
+}
+
+.small {
+    padding: 5px 0px 10px 0px;
+}

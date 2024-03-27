@@ -166,6 +166,10 @@ function route(app, conn, md5) {
         res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/DynamicTable/Dynamic_table.html')
     })
 
+    app.get('/AwanHoster', (req, res) => {
+        res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment2/index.html')
+    })
+
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
