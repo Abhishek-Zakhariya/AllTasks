@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+</head>
+<div class="detail">
+  <div>
+    <h2>Name : Abhishek Zakhariya</h2>
+    <h3>Task : Forgot Password</h3>
+    <h3>Date : 22/03/2024</h3>
+  </div>
+</div>
+
+<body>
+  <div>
+    <form id="form" method="post">
+
+      <div class="container">
+        <p id="err"></p>
+        <p id='link'></p>
+        <H1>Forgot Password</H1>
+        <div>
+          <label for="">Enter Email Address</label>
+          <input type="text" name="email1" id="email1" tabindex="1" placeholder="abhishek.zakhariya.2024@gmail.com">
+        </div>
+        <div class="btns">
+          <p id="submit2" style="background-color: green;cursor: pointer;" onclick="sendOTP()" tabindex="3">Send Activation Link</p>
+          <p id="reset2" style="background-color: red;cursor: pointer;" class="submit2" tabindex="4">Cancle</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- <script src="/script.js"></script>
+   -->
+  <script>
+    async function sendOTP() {
+
+      let form1 = new FormData(form);
+      let params1 = new URLSearchParams(form1);
+      let key = await fetch('http://localhost:7700/regeneratePass', {
+        method: 'post',
+        body: params1,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }
+      });
+
+
+    }
+  </script>
+</body>
+
+</html>

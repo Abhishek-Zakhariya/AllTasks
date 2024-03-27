@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    h2 {
+      text-align: center;
+    }
+
+    span {
+      color: rgb(241, 0, 0);
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Login</title>
+</head>
+<div class="detail">
+  <div>
+    <h2>Name: Abhishek Zakhariya</h2>
+    <h3>Task : Login Page</h3>
+    <h3>Date : 22/03/2024</h3>
+  </div>
+</div>
+
+<body>
+  <div>
+    <form action="/" id="form" method="post">
+
+      <div class="container">
+        <!-- <label id="counter"></label> -->
+        <p id="err2"></p>
+        <p id='link2'></p>
+        <H1>Login Here</H1>
+        <div>
+          <label for="email">Enter Email Address</label>
+          <input type="text" name="email" id="email" tabindex="1" placeholder="abhishek.zakhariya.2024@gmail.com">
+
+          <label for="pass">Enter Password</label>
+          <input type="password" name="pass" id="pass" tabindex="2" placeholder="Abhishek@123">
+        </div>
+        <div class="btns">
+          <p id="submit" style="background-color: green;" onclick="loginUser()" tabindex="3">Login</p>
+          <p id="reset" style="background-color: red;" onclick="clearFormData()" tabindex="4">Cancle</p>
+        </div>
+        <div>
+          <a href="http://localhost:7700/forgotPass">Forgot Password?</a>
+        </div>
+        <div>
+          <a href="/">Create New Account?</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- <script src="/script.js"></script> -->
+  <script>
+    async function loginUser() {
+      let detail = new FormData(form)
+      let params = new URLSearchParams(detail);
+
+      let data = await fetch('http://localhost:7700/login', {
+        method: 'post',
+        body: params,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }
+      });
+
+      if (data.ok) {
+        window.location.href = 'http://localhost:7700/';
+      } else {
+        window.location.href = 'http://localhost:7700/login';
+      }
+    }
+  </script>
+</body>
+
+</html>

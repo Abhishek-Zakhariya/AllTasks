@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<div class="detail">
+  <div>
+    <h2>Name: Abhishek Zakhariya</h2>
+    <h3>Task : Registration</h3>
+    <h3>Date : 21/03/2024</h3>
+  </div>
+</div>
+
+<body>
+  <div>
+    <form action="/" id="form" method="post">
+      <div class="container">
+
+        <label id="counter"></label>
+        <p id="err"></p>
+        <p id='link'></p>
+        <H1>Registeration Form</H1>
+        <div>
+          <label for="fname">Enter Firstname</label>
+          <input type="text" name="fname" id="fname" tabindex="1" placeholder="Abhishek" value="Abhishek">
+          <label for="lname">Enter Lastname</label>
+          <input type="text" name="lname" id="lname" tabindex="2" placeholder="Zakhariya" value="Zakhariya">
+          <label for="">Enter Email Address</label>
+          <input type="text" name="email" id="email" tabindex="3" placeholder="abhishek.zakhariya.2024@gmail.com" value="@gmail.com">
+          <label for="">Enter DOB</label>
+          <input type="text" name="dob" id="dob" tabindex="4" placeholder="25/09/2002" value="25/09/2002">
+          <label for="pass">Enter Password</label>
+          <input type="password" name="pass" id="pass" tabindex="5" placeholder="Abhishek@123">
+          <label for="cpass">Confirm Password</label>
+          <input type="password" name="cpass" id="cpass" tabindex="6">
+          <label for="addr">Enter Address</label>
+          <textarea cols="5" rows="5" id="addr" name="addr" tabindex="7" placeholder="Ramehswar Nagar, Jamnagar-361 008."></textarea>
+          <label for=""></label>
+        </div>
+        <div class="btns">
+          <p id="submit" onclick="getFormData()" tabindex="8">Submit Form</p>
+          <p id="reset" onclick="clearFormData()" tabindex="9">Reset Form</p>
+        </div>
+        <div>
+          <a href="/login" style="text-decoration: none;">Sign In Here</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="/script.js"></script>
+</body>
+
+</html>

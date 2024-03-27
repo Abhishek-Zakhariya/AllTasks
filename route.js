@@ -76,7 +76,7 @@ function route(app, conn, md5) {
 
         pro.then((result) => {
             let encPass = md5(pass + result[0].salt);
-            if (result[0].pass == encPass) {
+            if (result[0].pass == encPass && result[0].activeUser == 1) {
                 console.log("matched");
 
             }
@@ -85,7 +85,6 @@ function route(app, conn, md5) {
 
             }
         })
-
     });
 
     app.get('/welcome/:key', (req, res) => {

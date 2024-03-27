@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.detail {
+    text-align: center
+}
+
+#link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.err{
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 10px;
+    margin: 0 auto;
+    width: 800px;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px 0;
+    background : #00000024;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    background: #f1f1f1;
+}
+
+#submit {
+    border-radius: 5px;
+    font-size: medium;
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+
+}
+
+#reset {
+    border-radius: 5px;
+    text-align: center;
+    font-size: medium;
+    background-color: #bb361f;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+
+}
+
+h1 {
+
+    padding: 0px 0px 0px 240px;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+    opacity: 1.0;
+    outline: black;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+}
