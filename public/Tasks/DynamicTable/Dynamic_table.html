@@ -1,0 +1,114 @@
+<html>
+<style>
+  td {
+    height: 50px;
+    width: 100px;
+  }
+
+  tr:nth-of-type(even) td:nth-of-type(even) {
+    background-color: rgb(50, 70, 70);
+  }
+
+  tr:nth-of-type(odd) td:nth-of-type(odd) {
+    background-color: grey;
+  }
+</style>
+
+<body>
+  <h1>Name : Abhishek Zakhariya</h1>
+  <h2>Emp id: 24DEV083</h2>
+  <p id="detail"></p>
+  <script>
+    document.getElementById("detail").innerHTML = Date();
+
+    function add_row() {
+
+      var mytbl = document.getElementById("tbl");
+      var rw = mytbl.rows;
+      var cols = mytbl.rows[0].cells.length;
+      // console.log(cols);
+      // console.log(rw);
+      var row = mytbl.insertRow(rw.length);
+      // console.log(row);
+      // document.getElementById("msg").innerHTML = rw;
+      var cell;
+
+      for (var i = 0; i < cols; i++) {
+        cell = row.insertCell(i);
+      }
+    }
+
+    function remove_row() {
+      var mytbl = document.getElementById("tbl");
+      mytbl.deleteRow(-1);
+
+      console.log(mytbl.rows);
+      if (mytbl.rows.length < 2) {
+        alert("table must have atleast 2 rows and two columns");
+        add_row();
+      }
+    }
+
+    function add_column() {
+      var mytbl = document.getElementById("tbl");
+      var rw = mytbl.rows;
+      var cols = mytbl.rows[0].cells.length;
+
+      var cell;
+      for (let i = 0; i < rw.length; i++) {
+        cell = rw[i].insertCell(cols - 1);
+      }
+      // console.log(rw);
+    }
+
+    function remove_column(params) {
+
+      var mytbl = document.getElementById("tbl");
+      var rw = mytbl.rows;
+      var cols = mytbl.rows[0].cells.length;
+
+      if (cols <= 2) {
+        alert("Table must have two columns and two rows");
+        add_column();
+      }
+      var i = 1;
+      for (let j = 0; j < rw.length; j++) {
+        mytbl.rows[j].deleteCell(i);
+      }
+      if (mytbl.cols.length < 2) {
+        alert("Table must have two rows and tow columns");
+      }
+    }
+  </script>
+  <style>
+    .btn {
+      width: 80px;
+      height: 40px;
+    }
+
+    ;
+  </style>
+  <button id="add_column" name="btn1" style="background: skyblue;" class="btn" onclick="add_column()">Add
+    Column</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="remove_column" name="btn2" style="background:red;" class="btn" onclick="remove_column()">Remove
+    Column</button>
+  <br><br>
+
+  <table id="tbl" border="1">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <br><br>
+  <button id="addrow" name="btn3" style="background: skyblue;" class="btn" onclick="add_row()">Add Row</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="remove_row" name="btn4" class="btn" style="background: red;" onclick="remove_row()">Remove Row</button>
+  <p id="msg"></p>
+
+</body>
+
+</html>

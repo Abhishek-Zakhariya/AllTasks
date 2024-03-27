@@ -158,6 +158,10 @@ function route(app, conn, md5) {
         res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/KukuCube/KookuCube.html");
     });
 
+    app.get('/ehya', (req, res) => {
+        res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment1/File1.html");
+    })
+
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
