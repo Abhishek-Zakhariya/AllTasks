@@ -152,7 +152,11 @@ function route(app, conn, md5) {
 
     app.get('/tic_tac_toe', (req, res) => {
         res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/tic_tac_toe/tic_tac_toe.html");
-    })
+    });
+
+    app.get('/kukuCube', (req, res) => {
+        res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/KukuCube/KookuCube.html");
+    });
 
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
