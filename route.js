@@ -160,6 +160,10 @@ function route(app, conn, md5) {
 
     app.get('/ehya', (req, res) => {
         res.sendFile("/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment1/File1.html");
+    });
+
+    app.get('/DyTable', (req, res) => {
+        res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/DynamicTable/Dynamic_table.html')
     })
 
     function generateSalt() {
