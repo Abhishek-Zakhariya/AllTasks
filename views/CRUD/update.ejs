@@ -1,0 +1,433 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./CRUD/style.css">
+  <title>Update Data</title>
+</head>
+
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+  <form action="/edit" onsubmit="return ValidateForm()" name="job_app_update" method="post">
+    <!-- Basic detail -->
+
+    <fieldset>
+      <table style="padding: 10px;border-spacing: 10px;">
+        <legend>Basic Detail </legend>
+
+        <tr>
+          <td rowspan="2"><label for="fname">First Name: </label>
+            <input type="text" tabindex="1" id="fname" name="fname" value=<%= `${result.fname}` %>><br>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="lname">Last Name: </label>
+            <input type="text" id="lname" tabindex="2" name="lname" value=<%= `${result.lname}` %>>
+            <label id="errlname"></label>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><label for="designation">Designation: </label>
+            <input type="text" id="designation" tabindex="3" name="designation" value=<%= `${result.designation}` %>>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Gender: </label>
+            <input type="radio" id="male" name="gender" tabindex="4" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" tabindex="5" value="Female">
+            <label for="female">Female</label><br>
+            <label id="errradio"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="2"><label for="rel">Relationship: </label>
+            <select name="Relationship" id="Relationship" tabindex="6">
+              <option id="op1" value="Married">Married</option>
+              <option id="op2" value="Unmarried">Unmarried</option>
+              <option id="op3" value="Divorsed">Divorsed</option>
+            </select><br> <label id="errrel"></label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email: </label>
+            <input type="text" id="email" tabindex="7" name="email" value=<%= `${result.email}` %>><br>
+            <label id="erremail"></label>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><label for="phnno"> Phone no: </label>
+            <input type="search" id="phnno" tabindex="8" name="phnno" value=<%= `${result.phn_no}` %>><br>
+            <label id="errmob"></label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="add1">Address1: </label>
+            <input type="text" id="add1" tabindex="9" name="add1" value=<%= `${result.addr1}` %>>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><label for="add2"> Address2: </label>
+            <input type="text" id="add2" tabindex="10" name="add2" value=<%= `${result.addr2}` %>>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="city">City: </label>
+            <input type="text" id="city" tabindex="11" name="city" value=<%= `${result.city}` %>>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><label>State:</label>
+            <select name="state" id="state" tabindex="12">
+              <option value="gujarat">Gujarat</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="goa">Goa</option>
+              <option value="jk">J&K</option>
+              <option value="up">UP</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dob"> DOB: </label>
+            <input type="text" id="dob" name="dob" tabindex="13" value=<%= `${result.dob}` %>>
+            <label id="errdob"></label>
+          </td>
+        </tr>
+      </table>
+    </fieldset><br><br>
+
+
+    <!-- Education Details -->
+
+    <fieldset>
+      <legend>Education Detail </legend>
+      <table style="padding: 10px;border-spacing: 10px;">
+        <tr>
+          <td><label>SSC result</label></td>
+        </tr>
+        <tr>
+          <td><label for="coursename3">Course Name</label></td>
+          <td><input type="text" id="coursename3" tabindex="14" name="coursename[]" value=<%= education[0].course_name %>><br>
+            <label id="errcource"></label>
+          </td>
+          <td><label for="board">Name of board</label></td>
+          <td><input type="text" id="board" tabindex="15" name="board[]" value=<%= education[0].board_or_uni %>><br>
+            <label id="errtenboard"></label>
+          </td>
+          <td><label for="pass_year">Passsing Year</label></td>
+          <td><input type="text" id="pass_year" tabindex="16" name="pass_year[]" value=<%= education[0].pass_year %>><br>
+            <label id="errtenyear"></label>
+          </td>
+          <td><label for="percentage">Percentage</label></td><br>
+          <td><input type="text" id="percentage" tabindex="17" name="percentage[]" value=<%= education[0].percentage %>><br>
+            <label id="errtenperc" class="staticerr"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>HSC/Diploma result</label></td>
+        </tr>
+        <tr>
+          <td><label for="coursename4">Course Name</label></td>
+          <td><input type="text" id="coursename4" tabindex="18" name="coursename[]" value=<%= education[1].course_name %>><br>
+            <label id="errcource"></label>
+          </td>
+          <td><label for="board2">Name of board</label></td>
+          <td><input type="text" id="board2" tabindex="19" name="board[]" value=<%= education[1].board_or_uni %>><br>
+            <label id="errboard2"></label>
+          </td>
+          <td><label for="pass_year2">Passsing Year</label></td>
+          <td><input type="text" id="pass_year2" tabindex="20" name="pass_year[]" value=<%= education[1].pass_year %>><br>
+            <label id="erryear2"></label>
+          </td>
+          <td><label for="percentage2">Percentage</label></td>
+          <td><input type="text" id="percentage2" tabindex="21" name="percentage[]" value=<%= education[1].percentage %>><br>
+            <label id="errperc2" class="staticerr"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="bachelor">Bachelor Result</label></td>
+        </tr>
+        <tr>
+          <td><label for="coursename">Course Name</label></td>
+          <td><input type="text" id="coursename" tabindex="22" name="coursename[]" value=<%= education[2].course_name %>><br>
+            <label id="errcource"></label>
+          </td>
+          <td><label for="uni">University</label></td>
+          <td><input type="text" id="uni" tabindex="23" name="board[]" value=<%= education[2].board_or_uni %>><br>
+            <label id="erruni"></label>
+          </td>
+          <td><label for="pass_year3">Passing Year</label></td>
+          <td><input type="text" id="pass_year3" tabindex="24" name="pass_year[]" value=<%= education[2].pass_year %>><br>
+            <label id="erryear3"></label>
+          </td>
+          <td><label for="precentage3">Percentage</label></td>
+          <td><input type="text" id="percentage3" tabindex="25" name="percentage[]" value=<%= education[2].percentage %>><br>
+            <label id="errperc3" class="staticerr"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="master">Master Result</label></td>
+        </tr>
+        <tr>
+          <td><label for="coursename2">Course Name</label></td>
+          <td><input type="text" id="coursename2" tabindex="26" name="coursename[]" value=<%= education[3].course_name %>><br>
+            <label id="errcource2"></label>
+          </td>
+          <td><label for="uni2">University</label></td>
+          <td><input type="text" id="uni2" tabindex="27" name="board[]" value=<%= education[3].board_or_uni %>><br>
+            <label id="erruni2"></label>
+          </td>
+          <td><label for="pass_year4">Passing Year</label></td>
+          <td><input type="text" id="pass_year4" tabindex="28" name="pass_year[]" value=<%= education[3].pass_year %>><br>
+            <label id="erryear4"></label>
+          </td>
+          <td><label for="precentage4">Percentage</label></td>
+          <td><input type="text" id="percentage4" tabindex="29" name="percentage[]" value=<%= education[3].percentage %>><br>
+            <label id="errperc4" class="staticerr"></label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <br><br>
+
+
+    <!-- Work Experience -->
+
+    <fieldset>
+      <legend>Work Experience</legend>
+
+      <button>Add Row</button>
+      <button>Delete Row</button>
+      <table style="padding: 10px;border-spacing: 10px;">
+        <tr>
+          <td><label for="cmpnname">Comapany Name </label></td>
+          <td><input type="text" id="cmpnname" tabindex="30" name="cmpnname[]" value=<%= experience[0].cmp_name %>></td>
+          <td><label for="desig">Designation </label></td>
+          <td><input type="text" id="desig" tabindex="31" name="desig[]" value=<%= experience[0].designation %>><br>
+
+          </td>
+          <td><label for="start_date">From </label></td>
+          <td><input type="text" id="start_date" tabindex="32" name="start_date[]" value=<%= experience[0].from_date %>><br>
+            <label id="errstart" class="staticerr"></label>
+          </td>
+          <td><label for="end_date">To </label></td>
+          <td><input type="text" id="end_date" tabindex="33" name="end_date[]" value=<%= experience[0].to_date %>><br>
+            <label id="errend" class="staticerr"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="cmpnname1">Comapany Name </label></td>
+          <td><input type="text" id="cmpnname1" tabindex="33" name="cmpnname[]" value=<%=  %>></td>
+          <td><label for="desig1">Designation </label></td>
+          <td><input type="text" id="desig1" tabindex="34" name="desig[]" value=<%=  %>><br>
+          </td>
+          <td><label for="start_date1">From </label></td>
+          <td><input type="text" id="start_date1" tabindex="35" name="start_date[]" value=<%=  %>><br>
+            <label id="errstart1" class="staticerr"></label>
+          </td>
+          <td><label for="end_date1">To </label></td>
+          <td><input type="text" id="end_date1" tabindex="36" name="end_date[]" value=<%=  %>><br>
+            <label id="errend1" class="staticerr"></label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="cmpnname2">Comapany Name </label></td>
+          <td><input type="text" id="cmpnname2" tabindex="37" name="cmpnname[]" value=<%=  %>></td>
+          <td><label for="desig2">Designation </label></td>
+          <td><input type="text" id="desig2" tabindex="38" name="desig[]" value=<%=  %>><br>
+          </td>
+          <td><label for="start_date2">From </label></td>
+          <td><input type="text" id="start_date2" tabindex="39" name="start_date[]" value=<%=  %>><br>
+            <label id="errstart2" class="staticerr"></label>
+          </td>
+          <td><label for="end_date2">To </label></td>
+          <td><input type="text" id="end_date2" tabindex="40" name="end_date[]" value=<%=  %>><br>
+            <label id="errend2" class="staticerr"></label>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+
+    <!-- Language_Known  && Technologies-->
+    <table style="padding: 10px;border-spacing: 10px;">
+      <tr>
+        <td>
+          <fieldset style="width: 40%;">
+            <legend>Language Known</legend>
+            <table style="padding: 10px;border-spacing: 10px;">
+              <tr>
+                <td><input type="checkbox" id="hindi" tabindex="41" value="hindi" name="Language[]"></td>
+                <td><label for="hindi">Hindi</label></td>
+                <td><input type="checkbox" id="read1" tabindex="42" value="read" name="hindi[]"></td>
+                <td><label for="read1">Read</label></td>
+                <td><input type="checkbox" id="write1" tabindex="43" value="write" name="hindi[]"></td>
+                <td><label for="write1">Write</label></td>
+                <td><input type="checkbox" id="speak1" tabindex="44" value="speak" name="hindi[]"></td>
+                <td><label for="speak1">Speak</label></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="english" tabindex="45" value="english" name="Language[]"></td>
+                <td><label for="english">English</label></td>
+                <td><input type="checkbox" id="read2" tabindex="46" value="read" name="english[]"></td>
+                <td><label for="read2">Read</label></td>
+                <td><input type="checkbox" id="write2" tabindex="47" value="write" name="english[]"></td>
+                <td><label for="write2">Write</label></td>
+                <td><input type="checkbox" id="speak2" tabindex="48" value="speak" name="english[]"></td>
+                <td><label for="speak2">Speak</label></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="gujarati" tabindex="49" value="gujarati" name="Language[]"></td>
+                <td><label for="gujarati">Gujarati</label></td>
+                <td><input type="checkbox" id="read3" tabindex="50" value="read" name="gujarati[]"></td>
+                <td><label for="read3">Read</label></td>
+                <td><input type="checkbox" id="write3" tabindex="51" value="write" name="gujarati[]"></td>
+                <td><label for="write3">Write</label></td>
+                <td><input type="checkbox" id="speak3" tabindex="52" value="speak" name="gujarati[]"></td>
+                <td><label for="speak3">Speak</label></td>
+              </tr>
+            </table>
+          </fieldset>
+        <td><label id="errpro" class="staticerr"></label></td>
+        </td>
+
+
+        <td>
+          <fieldset style="width: 60%;">
+            <legend>Technologies you know</legend>
+
+            <table>
+              <tr>
+                <td><input type="checkbox" id="mysql" tabindex="53" name="tech[]" value="mysql"></td>
+                <td><label for="mysql">Mysql</label></td>
+                <td><input type="radio" id="beg2" tabindex="54" value="Beginner" name="skill2"></td>
+                <td><label for="beg2">Beginer</label></td>
+                <td><input type="radio" id="mid2" tabindex="55" value="Mideator" name="skill2"></td>
+                <td><label for="mid2">Mideator</label></td>
+                <td><input type="radio" id="exp2" tabindex="56" value="Expert" name="skill2"></td>
+                <td><label for="exp2" id="lblexp2">Expert</label></td>
+                <td><label id="errpro2" class="staticerr"></label></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="laravel" tabindex="57" name="tech[]" value="laravel"></td>
+                <td><label for="laravel">Laravel</label></td>
+                <td><input type="radio" id="beg3" tabindex="58" value="Beginner" name="skill3"></td>
+                <td><label for="beg3">Beginer</label></td>
+                <td><input type="radio" id="mid3" tabindex="59" value="Mideator" name="skill3"></td>
+                <td><label for="mid3">Mideator</label></td>
+                <td><input type="radio" id="exp3" tabindex="60" value="Expert" name="skill3"></td>
+                <td><label for="exp3" id="lblexp3">Expert</label></td>
+                <td><label id="errpro3" class="staticerr"></label></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="oracle" tabindex="61" name="tech[]" value="oracle"></td>
+                <td><label for="oracle">Oracle</label></td>
+                <td><input type="radio" id="beg4" tabindex="62" value="Beginner" name="skill4"></td>
+                <td><label for="beg4">Beginer</label></td>
+                <td><input type="radio" id="mid4" tabindex="63" value="Mideator" name="skill4"></td>
+                <td><label for="mid4">Mideator</label></td>
+                <td><input type="radio" id="exp4" tabindex="64" value="Expert" name="skill4"></td>
+                <td><label for="exp4" id="lblexp4">Expert</label></td>
+                <td><label id="errpro4" class="staticerr"></label></td>
+              </tr>
+            </table>
+          </fieldset>
+        </td>
+      </tr>
+      </table>
+      
+
+
+    <!-- Reference Contact -->
+    <fieldset style="width: 60%;">
+      <legend>Reference Contact</legend>
+      <table style="padding: 10px;border-spacing: 10px;">
+        <tr>
+          <td><label for="name">Name </label></td>
+          <td><input type="text" id="name" tabindex="65" name="name[]" value=<%= reference[0].name %>></td>
+          <td><label for="contact">Contact Number </label></td>
+          <td><input type="text" id="contact" tabindex="66" name="contact[]" value=<%= reference[0].contact %>></td>
+          <td><label for="rel3">Relation </label></td>
+          <td><input type="text" id="rel3" tabindex="67" name="rel[]" value=<%= reference[0].relation %>></td>
+        </tr>
+
+        <tr>
+          <td><label for="name2">Name </label></td>
+          <td><input type="text" id="name2" tabindex="68" name="name[]" value=></td>
+          <td><label for="contact2">Contact Number </label></td>
+          <td><input type="text" id="contact2" tabindex="69" name="contact[]" value=></td>
+          <td><label for="rel2">Relation </label></td>
+          <td><input type="text" id="rel2" tabindex="70" name="rel[]" value=></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br><br>
+
+    <!-- Preference Detail -->
+
+    <fieldset>
+      <legend>Preferences</legend>
+      <table style="padding: 10px;border-spacing: 10px;">
+        <tr>
+          <td colspan="2"><label for="loc"> Prefered Location </label></td>
+          <td><input type="text" id="loc" tabindex="71" name="loc" value=<%= preference[0].location %>></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label for="notice">Notice Period </label></td>
+          <td><input type="text" id="notice" tabindex="72" name="notice" value=<%= preference[0].notice_period %>></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label for="exp_ctc">Expected CTC </label></td>
+          <td><input type="text" id="exp_ctc" tabindex="73" name="exp_ctc" value=<%= preference[0].exp_ctc %>></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label for="cur_ctc">Current CTC </label></td>
+          <td><input type="text" id="cur_ctc" tabindex="74" name="cur_ctc" value=<%= preference[0].cur_ctc %>></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label for="dept">Department </label> </td>
+          <td><select type="text" id="dept" tabindex="75" name="dept">
+              <option value="design">Designing</option>
+              <option value="development" selected>Development</option>
+              <option value="marketing">Marketing</option>
+            </select></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br>
+
+    <table style="padding: 10px;border-spacing: 10px;">
+      <tr>
+        <td><input type="submit" value="Update" id="update" tabindex="76"></td>
+        <td><input type="reset" value="Reset" tabindex="77"></td>
+      </tr>
+    </table>
+  </form>
+  <% let gender = result.gender %>
+  <% let state = result['state'] %>
+  <% let relationship = result['relationship'] %>
+  <% let exp = experience %>
+
+  <script>
+    let gender = `<%- gender %>`;
+    let state = `<%- state %>`;
+    let relation = `<%- relationship %>`;
+    let experience = `<%- exp %>`;
+
+
+    document.querySelector(`input[value="${gender}"]`).checked = true;
+    document.querySelector(`option[value="${state}"]`).selected = true;
+    document.querySelector(`option[value="${relation}"]`).selected = true;
+  </script>
+</body>
+
+</html>
