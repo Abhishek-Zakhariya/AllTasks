@@ -30,26 +30,26 @@
 
     <% if (name) { %>
 
-    <a href="/?page=1&sortby=asc&name=<%= name %>" id="first" <%- disable1 %>>
+    <a href="/Pagination/?page=1&sortby=asc&name=<%= name %>" id="first" <%- disable1 %>>
       << </a>
-        <a href="/?page=<%= page = page-1 %> &sortby=asc&name=<%= name %>" <%- disable1 %>>
+        <a href="/Pagination/?page=<%= page = page-1 %> &sortby=asc&name=<%= name %>" <%- disable1 %>>
 
           < </a>
 
             <a><%= page+1 %></a>
-            <a href="/?page=<%= page = page+2 %>&sortby=asc&name=<%= name %>" <%- disable2 %>> > </a>
-            <a href="/?page=20&sortby=asc&name=<%= name%>" <%- disable2 %>> >> </a>
+            <a href="/Pagination/?page=<%= page = page+2 %>&sortby=asc&name=<%= name %>" <%- disable2 %>> > </a>
+            <a href="/Pagination/?page=20&sortby=asc&name=<%= name%>" <%- disable2 %>> >> </a>
 
             <% } else { %>
 
-            <a href="/?page=1" id="first" <%- disable1 %>>
+            <a href="/Pagination/?page=1" id="first" <%- disable1 %>>
               << </a>
-                <a href="/?page=<%= page = page-1 %>" <%- disable1 %>>
+                <a href="/Pagination/?page=<%= page = page-1 %>" <%- disable1 %>>
 
                   < </a>
                     <a><%= page+1 %></a>
-                    <a href="/?page=<%= page = page+2 %>" <%- disable2 %>> > </a>
-                    <a href="/?page=20" <%- disable2 %>> >> </a>
+                    <a href="/Pagination/?page=<%= page = page+2 %>" <%- disable2 %>> > </a>
+                    <a href="/Pagination/?page=20" <%- disable2 %>> >> </a>
 
                     <% } %>
 

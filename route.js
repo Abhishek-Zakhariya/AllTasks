@@ -174,16 +174,33 @@ function route(app, conn, md5) {
         res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment3/index.html')
     })
 
-    // app.get('/Pagination', (req, res) => {
-    //     res.render('');
-    // })
-
     app.get('/FetchAPI', (req, res) => {
         res.render('./FetchAPI_JsonPlaceHolder/posts.ejs');
     });
 
     app.get('/singlepost/:id', (req, res) => {
-        res.render('./FetchAPI_JsonPlaceHolder/singlePost.ejs'); 
+        res.render('./FetchAPI_JsonPlaceHolder/singlePost.ejs');
+    });
+
+    app.get('/Pagination', (req, res) => {
+        let pagesize = 10;
+        console.log("reached");
+        let page = + req.query.page || 1;
+        let start = (page - 1) * pagesize;
+        let sql;
+        // let sortby = req.query.sortby === 'desc' ? 'desc' : 'asc';
+        let name = req.query.name;
+        let oredrBY = (name) ? ` order by ${name}` : '';
+
+        sql = `select stud_id,firstname,lastname,rollno,DATE_FORMAT(dob,'%d/%m/%y') as dob,sex,mobileno,email,city,state,postal_code from student_master ${oredrBY} limit 10 offset ${start}`;
+
+        conn.query(sql, function (err, result, fields) {
+            console.log(sql);
+            if (err) throw err;
+            res.render('./Pagination/students', {
+                data: result, page, name: name, oredrBY
+            });
+        });
     });
 
     function generateSalt() {
