@@ -1,0 +1,54 @@
+.staticerr {
+    color: red;
+    font: bolder;
+}
+
+.main {
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+.msg {
+    color: green;
+    background-color: darkgreen;
+}
+
+.err {
+    color: red;
+    font: bolder;
+}
+
+fieldset {
+    border: none;
+    border-radius: 10px;
+    background-color: wheat;
+}
+
+legend {
+    border-radius: 4px;
+    background-color: #000;
+    color: white;
+}
+
+#reset {
+    cursor: pointer;
+    background: #000;
+    border-radius: 5px;
+    border: none;
+    font-family: "arial-black";
+    font-size: 14px;
+    color: #FFF;
+    padding: 8px 12px;
+}
+
+p {
+    text-align: center;
+    display: inline-block;
+    background: #000;
+    border-radius: 4px;
+    font-family: "arial-black";
+    font-size: 14px;
+    color: #FFF;
+    padding: 8px 12px;
+    cursor: pointer;
+}

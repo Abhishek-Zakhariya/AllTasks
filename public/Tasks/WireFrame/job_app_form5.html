@@ -1,0 +1,336 @@
+<html>
+    <head>
+<script>
+
+    function ValidateForm(){
+        let x = document.forms["job_app"]["fname"].value;
+
+        if (x=="") {
+            alert("First Name is Required!");
+            return false;
+        }
+
+        // if(document.getElementById("phnno").value != "9979537197")
+        // {
+        //     alert("Enter Valid Phone Number!");
+        // }
+    
+        
+        let city = document.getElementsById("city").value;
+        city.value = "jamnagar";
+    }
+</script>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <form action="#" onsubmit="ValidateForm()" name="job_app" method="get">
+        <fieldset>
+            <table style="padding: 10px;border-spacing: 10px;">
+                <legend>Basic Detail </legend>
+                
+                <tr>
+                    <td rowspan="2" ><label for="fname">First Name: </label>
+                        <input type="text" tabindex="1" id="fname" name="fname">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name: </label>
+                        <input type="text" id="lname" tabindex="2" name="lname">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label for="designation">Designation: </label>
+                        <input type="text" id="designation" tabindex="3" name="designation">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Gender: </label>
+                        <input type="radio" id="male" name="gender" tabindex="4" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" tabindex="5" value="Female">
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label for="rel">Relationship: </label><input type="text" id="rel" tabindex="5" name="rel"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email: </label><input type="text" id="email" tabindex="6" name="email"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label for="phnno"> Phone no: </label><input type="search" id="phnno" tabindex="7" name="phnno"></td>
+                </tr>
+                <tr>
+                    <td><label for="add1">Adress1: </label> <input type="text" id="add1" tabindex="8" name="add1"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label for="add2"> Adress2: </label> <input type="text" id="add2" tabindex="9" name="add2"></td>
+                </tr>
+                <tr>
+                    <td><label for="city">City: </label><input type="text" id="city" tabindex="10" name="city"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label>State:</label>
+                        <select name="state" id="state" tabindex="11">
+                            <option value="gujarat">Gujarat</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="goa">Goa</option>
+                            <option value="jk">J&K</option>
+                            <option value="up">UP</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dob"> DOB: </label>
+                        <input type="text" id="dob" name="dob" tabindex="12">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+
+        <fieldset>
+            <legend>Education Detail </legend>
+            <table style="padding: 10px;border-spacing: 10px;">
+                <tr>
+                    <td><label>SSC result</label></td>
+                </tr>
+                <tr>
+                    <td><label for="board">Name of board</label></td>
+                    <td><input type="text" id="board" tabindex="13" name="board"></td>
+                    <td><label for="pass_year">Passsing Year</label></td>
+                    <td><input type="text" id="pass_year" tabindex="14" name="pass_year"></td>
+                    <td><label for="percentage">Percentage</label></td>
+                    <td><input type="text" id="percentage" tabindex="15" name="percentage"></td>
+                </tr>
+
+                <tr>
+                    <td><label>HSC/Diploma result</label></td>
+                </tr>
+                <tr>
+                    <td><label for="board2">Name of board</label></td>
+                    <td><input type="text" id="board2" tabindex="16" name="board2"></td>
+                    <td><label for="pass_year2">Passsing Year</label></td>
+                    <td><input type="text" id="pass_year2" tabindex="17" name="pass_year2"></td>
+                    <td><label for="percentage2">Percentage</label></td>
+                    <td><input type="text" id="percentage2" tabindex="18" name="percentage2"></td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="bachelor">Bachelor Result</label></td>
+                </tr>
+                <tr>
+                    <td><label for="coursename">Course Name</label></td>
+                    <td><input type="text" id="coursename" tabindex="19" name="coursename"></td>
+                    <td><label for="uni">University</label></td>
+                    <td><input type="text" id="uni" tabindex="20" name="uni"></td>
+                    <td><label for="pass_year3">Passing Year</label></td>
+                    <td><input type="text" id="pass_year3" tabindex="21" name="pass_year3"></td>
+                    <td><label for="precentage3">Percentage</label></td>
+                    <td><input type="text" id="percentage3" tabindex="22" name="percentage3"></td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="master">Master Result</label></td>
+                </tr>
+                <tr>
+                    <td><label for="coursename2">Course Name</label></td>
+                    <td><input type="text" id="coursename2" tabindex="23" name="coursename2"></td>
+                    <td><label for="uni2">University</label></td>
+                    <td><input type="text" id="uni2" tabindex="24" name="uni2"></td>
+                    <td><label for="pass_year4">Passing Year</label></td>
+                    <td><input type="text" id="pass_year4" tabindex="25" name="pass_year4"></td>
+                    <td><label for="precentage4">Percentage</label></td>
+                    <td><input type="text" id="percentage4" tabindex="26" name="percentage4"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br><br>
+
+        <fieldset>
+            <legend>Work Experience</legend>
+            <table style="padding: 10px;border-spacing: 10px;">
+            <tr><td><label for="cmpnname">Comapany Name </label></td>
+            <td><input type="text" id="cmpnname" tabindex="27" name="cmpnname"></td>
+            <td><label for="desig">Designation </label></td> 
+            <td><input type="text" id="desig" tabindex="28" name="desig"></td>
+            <td><label for="start_date">From </label></td> 
+            <td><input type="text" id="start_date" tabindex="29" name="start_date"></td>
+            <td><label for="end_date">To </label></td> 
+            <td><input type="text" id="end_date" tabindex="30" name="end_date"></td></tr>
+            
+            <tr><td><label for="cmpnname1">Comapany Name </label></td>
+            <td><input type="text" id="cmpnname1" tabindex="31" name="cmpnname1"></td>
+            <td><label for="desig1">Designation </label></td> 
+            <td><input type="text" id="desig1" tabindex="32" name="desig1"></td>
+            <td><label for="start_date1">From </label></td> 
+            <td><input type="text" id="start_date1" tabindex="33" name="start_date1"></td>
+            <td><label for="end_date1">To </label></td> 
+            <td><input type="text" id="end_date1" tabindex="34" name="end_date1"></td></tr>
+
+            <tr><td><label for="cmpnname2">Comapany Name </label></td>
+            <td><input type="text" id="cmpnname2" tabindex="35" name="cmpnname2"></td>
+            <td><label for="desig2">Designation </label></td> 
+            <td><input type="text" id="desig2" tabindex="36" name="desig2"></td>
+            <td><label for="start_date2">From </label></td> 
+            <td><input type="text" id="start_date2" tabindex="37" name="start_date2"></td>
+            <td><label for="end_date2">To </label></td> 
+            <td><input type="text" id="end_date2" tabindex="38" name="end_date2"></td></tr>
+        </table>
+        </fieldset>
+        
+
+        <table style="padding: 10px;border-spacing: 10px;">
+            <tr><td>
+        <fieldset style="width: 40%;">
+            <legend>Language Known</legend>
+            <table style="padding: 10px;border-spacing: 10px;">
+            <tr>
+            <td><input type="checkbox" id="hindi" tabindex="39" name="hindi" checked></td>
+            <td><label for="hindi">Hindi</label></td>
+            <td><input type="checkbox" id="read1" tabindex="40" name="read1"></td>
+            <td><label for="read1">Read</label></td>
+            <td><input type="checkbox" id="write1" tabindex="41" name="write1"></td>
+            <td><label for="write1">Write</label></td>
+            <td><input type="checkbox" id="speak1" tabindex="42" name="speak1"></td>
+            <td><label for="speak1">Speak</label></td>
+            </tr>
+            
+
+            <tr>
+            <td><input type="checkbox" id="english" tabindex="43" name="english"></td>
+            <td><label for="english">English</label></td>
+            <td><input type="checkbox" id="read2" tabindex="44" name="read2"></td>
+            <td><label for="read2">Read</label></td>
+            <td><input type="checkbox" id="write2" tabindex="45" name="write2"></td>
+            <td><label for="write2">Write</label></td>
+            <td><input type="checkbox" id="speak2" tabindex="46" name="speak2"></td>
+            <td><label for="speak2">Speak</label></td>
+            </tr>
+            
+
+            <tr>
+            <td><input type="checkbox" id="gujarati" tabindex="47" name="gujarati"></td>
+            <td><label for="gujarati">Gujarati</label></td>
+            <td><input type="checkbox" id="read3" tabindex="48" name="read3"></td>
+            <td><label for="read3">Read</label></td>
+            <td><input type="checkbox" id="write3" tabindex="49" name="write3"></td>
+            <td><label for="write3">Write</label></td>
+            <td><input type="checkbox" id="speak3" tabindex="50" name="speak3"></td>
+            <td><label for="speak3">Speak</label></td>
+            </tr>
+        </table>
+        </fieldset>
+    </td>
+    <td>
+        <fieldset style="width: 60%;">
+            <legend>Technologies you know</legend>
+
+            <table style="padding: 10px;border-spacing: 10px;">
+            <tr>
+            <td><input type="checkbox" id="php" tabindex="51" name="php"></td>
+            <td><label for="php">PHP</label></td>
+            <td><input type="radio" id="beg1" tabindex="52" name="skill1"></td>
+            <td><label for="beg1">Beginer</label></td>
+            <td><input type="radio" id="mid1" tabindex="53" name="skill1"></td>
+            <td><label for="mid1">Mideator</label></td>
+            <td><input type="radio" id="exp1" tabindex="54" name="skill1"></td>
+            <td><label for="exp1">Expert</label></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" id="mysql" tabindex="55" name="mysql"></td>
+                <td><label for="mysql">Mysql</label></td>
+                <td><input type="radio" id="beg2" tabindex="56" name="skill2"></td>
+                <td><label for="beg2">Beginer</label></td>
+                <td><input type="radio" id="mid2" tabindex="57" name="skill2"></td>
+                <td><label for="mid2">Mideator</label></td>
+                <td><input type="radio" id="exp2" tabindex="58" name="skill2"></td>
+                <td><label for="exp2">Expert</label></td>
+            </tr>        
+
+            <tr>
+            <td><input type="checkbox" id="laravel" tabindex="59" name="laravel"></td>
+            <td><label for="laravel">Laravel</label></td>
+            <td><input type="radio" id="beg3" tabindex="60" name="skill3"></td>
+            <td><label for="beg3">Beginer</label></td>
+            <td><input type="radio" id="mid3" tabindex="61" name="skill3"></td>
+            <td><label for="mid3">Mideator</label></td>
+            <td><input type="radio" id="exp3" tabindex="62" name="skill3"></td>
+            <td><label for="exp3">Expert</label></td>
+            </tr>
+            
+            <tr>
+                <td><input type="checkbox" id="oracle" tabindex="63" name="oracle"></td>
+                <td><label for="oracle">Oracle</label></td>
+                <td><input type="radio" id="beg4" tabindex="64" name="skill4"></td>
+                <td><label for="beg4">Beginer</label></td>
+                <td><input type="radio" id="mid4" tabindex="65" name="skill4"></td>
+                <td><label for="mid4">Mideator</label></td>
+                <td><input type="radio" id="exp4" tabindex="66" name="skill4"></td>
+                <td><label for="exp4">Expert</label></td>
+            </tr>
+        
+        </table>
+        </fieldset>
+    </td>
+</tr>
+        <br><br>
+    </table>
+
+        <fieldset style="width: 60%;">
+            <legend>Reference Contact</legend>
+        <table style="padding: 10px;border-spacing: 10px;">
+            <tr>    
+            <td><label for="name">Name </label></td>
+            <td><input type="text" id="name" tabindex="67" name="name"></td>
+            <td><label for="contact">Contact Number </label></td> 
+            <td><input type="text" id="contact" tabindex="68" name="contact"></td>
+            <td><label for="rel3">Relation </label></td>
+            <td><input type="text" id="rel3" tabindex="69" name="rel3"></td>
+        </tr>
+
+        <tr>
+            <td><label for="name2">Name </label></td>
+            <td><input type="text" id="name2" tabindex="70" name="name2"></td>
+            <td><label for="contact2">Contact Number </label></td>
+            <td><input type="text" id="contact2" tabindex="71" name="contact2"></td>
+            <td><label for="rel2">Relation </label></td>
+            <td><input type="text" id="rel2" tabindex="72" name="rel2"></td>
+        </tr>
+    </table>
+        </fieldset>
+        <br><br>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <table style="padding: 10px;border-spacing: 10px;">
+            <tr><td colspan="2"><label for="loc">Prefered Location </label></td>
+            <td><input type="text" id="loc" tabindex="73" name="loc"></tr></td> </tr>    
+            <tr><td colspan="2"><label for="notice">Notice Period </label></td>
+            <td><input type="text" id="notice" tabindex="74" name="notice"></td></tr>
+            <tr><td colspan="2"><label for="exp_ctc">Expected CTC </label></td> 
+            <td><input type="text" id="exp_ctc" tabindex="75" name="exp_ctc"></td></tr>
+            <tr><td colspan="2"><label for="cur_ctc">Current CTC </label></td>
+            <td><input type="text" id="cur_ctc" tabindex="76" name="cur_ctc"></td></tr>
+            <tr><td colspan="2"><label for="dept">Department </label> </td>
+            <td><select type="text" id="dept" tabindex="77" name="dept">
+                <option value="design">Designing</option>
+                <option value="development" selected>Development</option>
+                <option value="marketing">Marketing</option>
+            </select></td></tr>             
+        </table>
+        </fieldset>
+        <br>
+        
+        <table  style="padding: 10px;border-spacing: 10px;">
+            <tr><td><input type="submit" tabindex="78"></td>
+            <td><input type="reset" tabindex="79"></td></tr>
+        </table>
+
+
+    </form>
+</body>
+
+</html>
