@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .btn {
+      width: 100px;
+      height: 40px;
+    }
+
+    .drpdown {
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bolder;
+    }
+
+    .drpdown select {
+      width: 100px;
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <% let disable1 = ''
+  let disable2 = ''
+  
+    if (page <= 1) {
+        disable1 = `style = pointer-events:none`;
+    }
+    if (page >= 20) {
+        disable2 = `style = pointer-events:none`;
+    }
+    
+  %>
+
+  <div style="text-align: center;padding: 30px;">
+
+    <a href="/Attendence/?page=1" id="first" <%- disable1 %>>
+      << </a>
+        <a href="/Attendence/?page=<%= page = page-1 %>" <%- disable1 %>>
+          < </a>
+
+            <a><%= page+1 %></a>
+            <a href="/Attendence/?page=<%= page = page+2 %>" <%- disable2 %>> > </a>
+            <a href="/Attendence/?page=20" <%- disable2 %>> >> </a>
+  </div>
+
+  <div class="drpdown">
+    <form method="get">
+
+      <select name="year" id="year">
+        <option value="2023" <% if (year=='2023') {  %> selected <%} %>>2023</option>
+        <option value="2024" <% if (year=='2024') {  %> selected <%} %>>2024</option>
+      </select>
+
+      <select name="month" id="month">
+        <option value="12" <% if (month=='12') {  %> selected <%} %>>December</option>
+        <option value="01" <% if (month=='01') { %> selected <%} %>>January</option>
+        <option value="02" <% if (month=='02') { %> selected <%} %>>February</option>
+      </select>
+
+      <input class="btn" type="submit">
+  </div>
+
+  </form>
+
+</body>
+
+</html>
