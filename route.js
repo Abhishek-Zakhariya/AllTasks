@@ -174,6 +174,18 @@ function route(app, conn, md5) {
         res.sendFile('/home/abhishek-zakhaniya/NodeJs/AllTasks/public/Tasks/HTML_Assignment3/index.html')
     })
 
+    // app.get('/Pagination', (req, res) => {
+    //     res.render('');
+    // })
+
+    app.get('/FetchAPI', (req, res) => {
+        res.render('./FetchAPI_JsonPlaceHolder/posts.ejs');
+    });
+
+    app.get('/singlepost/:id', (req, res) => {
+        res.render('./FetchAPI_JsonPlaceHolder/singlePost.ejs'); 
+    });
+
     function generateSalt() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 

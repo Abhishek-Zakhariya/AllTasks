@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <% let disable1 = ''
+  let disable2 = ''
+  
+    if (page <= 1) {
+        disable1 = `style = pointer-events:none`;
+    }
+    if (page >19) {
+        disable2 = `style = pointer-events:none`;
+    }  
+  %>
+
+  <section class="sec1">
+    <h1>Name: Abhishek Zakhariya</h1>
+    <h2>Task: Pagination</h2>
+    <h2>Date: 26/02/2024</h2>
+  </section>
+
+  <div style="text-align: center;padding: 30px;">
+
+
+    <% if (name) { %>
+
+    <a href="/?page=1&sortby=asc&name=<%= name %>" id="first" <%- disable1 %>>
+      << </a>
+        <a href="/?page=<%= page = page-1 %> &sortby=asc&name=<%= name %>" <%- disable1 %>>
+
+          < </a>
+
+            <a><%= page+1 %></a>
+            <a href="/?page=<%= page = page+2 %>&sortby=asc&name=<%= name %>" <%- disable2 %>> > </a>
+            <a href="/?page=20&sortby=asc&name=<%= name%>" <%- disable2 %>> >> </a>
+
+            <% } else { %>
+
+            <a href="/?page=1" id="first" <%- disable1 %>>
+              << </a>
+                <a href="/?page=<%= page = page-1 %>" <%- disable1 %>>
+
+                  < </a>
+                    <a><%= page+1 %></a>
+                    <a href="/?page=<%= page = page+2 %>" <%- disable2 %>> > </a>
+                    <a href="/?page=20" <%- disable2 %>> >> </a>
+
+                    <% } %>
+
+  </div>
+
+</body>
+
+</html>

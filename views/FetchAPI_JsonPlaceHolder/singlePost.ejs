@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Post</title>
+  <style>
+    td {
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-family: sans-serif;
+      font-size: 0.8rem;
+    }
+
+    .th {
+      padding: 8px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <table id="tbl"></table>
+  <a href="javascript:void(0)" onclick="comment()">Comments</a>
+  <table id="cmnt"></table>
+
+
+  <script>
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+
+    async function fetchApi() {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    }
+
+    let id;
+    let pathname = window.location.pathname;
+    let split_path = pathname.split('/');
+    id = split_path[2];
+
+    async function post_dislay() {
+      const tbl = document.getElementById('tbl')
+      let data = await fetchApi()
+
+      let li = '';
+
+      data.forEach((val) => {
+        if (val.id == id) {
+          for (const i in val) {
+            li += `<tr><td class='th'>${i}</td><td>${val[i]}</td>
+                </tr>`;
+          }
+          tbl.innerHTML = li;
+        }
+      });
+    }
+
+    async function comment() {
+      let cmnt = document.getElementById('cmnt');
+      const url = `https://jsonplaceholder.typicode.com/comments?postId=${id}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      let li1 = '';
+      let count = 1;
+      data.forEach((val) => {
+        for (const i in val) {
+          li1 += `<tr><td class='th'>${i}</td><td>${val[i]}</td>
+                </tr>`;
+          cmnt.innerHTML = li1;
+        }
+      });
+
+      return data;
+    }
+    // fetchApi()
+    post_dislay()
+  </script>
+</body>
+
+</html>
