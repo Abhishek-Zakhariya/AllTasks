@@ -12,12 +12,20 @@ pass1 += 1;
 pass.value = '123' + pass1;
 cpass.value = pass.value;
 addr.value = 'jamnagar'
+let loginbtn = document.getElementById('loginSubmit');
 
 submit.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         submit.click();
     }
-})
+});
+
+loginbtn.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        console.log("submit pressed");
+        loginbtn.click();
+    }
+});
 
 async function validateForm() {
     function errMsg(control, msg, color) {
@@ -28,7 +36,7 @@ async function validateForm() {
         control.placeholder = msg;
 
     }
-
+    const dateregex = /(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
     let returnVal = true;
     if (fname.value == '') {
         errMsg(fname, "Required*")
@@ -46,8 +54,16 @@ async function validateForm() {
         errMsg(dob, "Required*")
         returnVal = false;
     }
+    else if (dob.value.match(dateregex) == null) {
+        errDob.innerHTML = "Enter Valid Date!";
+        returnVal = false;
+    }
     if (pass.value == '') {
         errMsg(pass, "Required*")
+        returnVal = false;
+    }
+    else if (pass.value.length < 6) {
+        errpass.innerHTML = "Password Length Should be greater than 6!";
         returnVal = false;
     }
     if (addr.value == '') {
@@ -63,7 +79,6 @@ async function validateForm() {
         errMsg(cpass, "Password Doesn't Matched!")
         returnVal = false;
     }
-
     return returnVal;
 }
 
@@ -98,7 +113,7 @@ async function getFormData() {
             err.innerHTML = 'Email Already Exists!';
         }
         else {
-            key = `http://localhost:9600/welcome/${data1.key}`;
+            key = `http://localhost:7700/welcome/${data1.key}`;
             err.style.display = 'none';
             let link = document.getElementById('link');
             link.innerHTML = `<label style='color:red;'>Activation Link: <label><a href="${key}">${key}

@@ -10,8 +10,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public/Tasks'));
 app.use(express.static(__dirname + '/public/FetchAPI_JsonPlaceHolder'));
 app.use(express.static(__dirname + '/public/Attendence'));
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

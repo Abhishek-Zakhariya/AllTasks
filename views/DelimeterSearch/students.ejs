@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March 5</title>
+
+  <style>
+    .tbl1 {
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    .tbl1 tr td {
+      padding: 15px;
+      border: 1px solid black;
+    }
+
+    .tbl2 {
+      text-align: center;
+      width: 80%;
+    }
+
+    * {
+      margin: 0 auto;
+    }
+
+    .tr2 td {
+      padding: 15px;
+      background-color: cadetblue;
+    }
+
+    .tr2 th {
+      color: white;
+      padding: 10px;
+      background-color: rgb(5, 58, 61);
+    }
+
+    .sec1 {
+      text-align: center;
+    }
+
+    .sec0_1 {
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .sec0 {
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .sec2 {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #query {
+      width: 300px;
+      padding: 10px;
+    }
+
+    #btn {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="sec0">
+    <h1>Name: Abhishek Zakhariya</h1>
+    <h2>Task: Delimeter Search</h2>
+    <h2>Date: 05/03/2024</h2>
+  </section>
+  <section class="sec0_1">
+    <table class="tbl1">
+      <tr>
+        <td>firstname</td>
+        <td>_</td>
+      </tr>
+      <tr>
+        <td>lastname</td>
+        <td>^</td>
+      </tr>
+      <tr>
+        <td>mobileno</td>
+        <td>$</td>
+      </tr>
+      <tr>
+        <td>city</td>
+        <td>:</td>
+      </tr>
+    </table>
+  </section>
+  <section class="sec1">
+    <br><br><br><br>
+    <form>
+      <input type="text" placeholder="Search Here" tabindex="0" name="query" id="query" value="<%- fetchData1 %>" autofocus>
+      <input type="submit" value="GO" tabindex="1" id="btn">
+    </form>
+  </section>
+  <br><br><br><br>
+
+  <section class="sec2"></section>
+
+  <table class="tbl2">
+    <tr class="tr2">
+      <th>Stud ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Rollno</th>
+      <th>DOB</th>
+      <th>Sex</th>
+      <th>MobileNo</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+    </tr>
+
+    <% data.forEach(value => { %>
+
+    <tr class="tr2">
+      <td><%= value.stud_id %></td>
+      <td><%= value.firstname %></td>
+      <td><%= value.lastname %></td>
+      <td><%= value.rollno %></td>
+      <td><%= value.dob %></td>
+      <td><%= value.sex %></td>
+      <td><%= value.mobileno %></td>
+      <td><%= value.email %></td>
+      <td><%= value.city %></td>
+      <td><%= value.state %></td>
+      <td><%= value.postal_code %></td>
+    </tr>
+
+    <% }); %>
+  </table>
+  </section>
+
+</body>
+
+</html>
