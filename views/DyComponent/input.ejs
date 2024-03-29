@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/DyComponent/style.css">
+  <title>Create Component</title>
+</head>
+
+<body>
+  <section class="sec">
+    <div class="container">
+      <h1>Name: Abhishek Zakhariya</h1>
+      <h2>Task: Create Component</h2>
+      <h2>Date: 06/03/2024</h2>
+    </div>
+  </section>
+
+  <section class="sec1">
+    <div class="container">
+      <form method="get">
+        <label for="search">
+          Enter Field:
+        </label><input type="text" name="search" id="search" autofocus>
+        <input type="submit" id="btn" tabindex="1" value="GO">
+      </form>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+
+      <% if (`${input}` == 'gender') {%>
+      <%- include('gender.ejs') %>
+      <% } %>
+
+      <% if (`${input}` == 'languages') {%>
+      <%- include('languages.ejs') %>
+      <% } %>
+
+      <% if (`${input}` == 'technos') {%>
+      <%- include('technos.ejs') %>
+      <% } %>
+
+      <% if (`${input}` == 'marital') {%>
+      <%- include('marital.ejs') %>
+      <% } %>
+
+      <% if (`${input}` == 'dept') {%>
+      <%- include('department.ejs') %>
+      <% } %>
+
+      <% if (`${input}` == 'location') {%>
+      <%- include('location.ejs') %>
+      <% } %>
+
+    </div>
+  </section>
+</body>
+
+</html>

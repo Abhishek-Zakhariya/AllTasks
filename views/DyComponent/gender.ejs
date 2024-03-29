@@ -1,0 +1,5 @@
+<label>Select Gender: </label>
+<% result.forEach(val => { %>
+<input id=<%= `${val.op_key}` %> type=<%= `${val.control_name}` %> value=<%= `${val.op_key}`%> name=<%= `${val.sname}` %>>
+<label for=<%= `${val.op_key}` %>><%= `${val.op_key}` %></label>
+<% }); %>

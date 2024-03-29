@@ -1,0 +1,14 @@
+<label>Select Languages: </label><br>
+<% result.forEach(val => { %>
+<input id=<%= `${val.op_key}`%> type=<%= `${val.control_name}` %> value=<%= `${val.op_key}`%> name=<%= `${val.op_key}` %>>
+<label for=<%= `${val.op_key}`%>><%= `${val.op_key}` %></label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input id=<%= `${val.sub_op_key}`%> type=<%= `${val.control_name}` %> value=<%= `${val.sub_op_key}`%> name=<%= `${val.sub_op_key}` %>>
+<label for=<%= `${val.sub_op_key}`%>><%= `${val.sub_op_key}` %></label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input id=<%= `${val.sub_op_key1}`%> type=<%= `${val.control_name}` %> value=<%= `${val.sub_op_key1}`%> name=<%= `${val.sub_op_key1}` %>>
+<label for=<%= `${val.sub_op_key1}`%>><%= `${val.sub_op_key1}` %></label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input id=<%= `${val.sub_op_key2}`%> type=<%= `${val.control_name}` %> value=<%= `${val.sub_op_key2}`%> name=<%= `${val.sub_op_key2}` %>>
+<label for=<%= `${val.sub_op_key2}`%>><%= `${val.sub_op_key2}` %></label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<br>
+<% }); %>

@@ -1,0 +1,9 @@
+<label>Select Prefered Location: </label><br>
+<select>
+  <% result.forEach(val => { %>
+
+  <option id=<%= `${val.op_key}` %> value=<%= `${val.op_key}` %>><%= `${val.op_key}` %></option>
+
+  <br>
+  <% }); %>
+</select>

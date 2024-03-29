@@ -1,0 +1,26 @@
+* {
+    margin: 0 auto;
+}
+
+.sec1 {
+    padding: 20px 20px 20px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+form label{
+    font-size: x-large;
+}
+
+form input{
+    padding: 15px;
+}
+
+form btn{
+    padding: 15px;
+}
+
