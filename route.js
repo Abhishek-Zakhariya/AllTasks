@@ -1,4 +1,3 @@
-
 function route(app, conn, md5) {
 
     app.get('/register', (req, res) => {
