@@ -90,8 +90,6 @@ async function getFormData() {
         let detail = new FormData(form)
         let params = new URLSearchParams(detail);
 
-        // Data Mokli rahiya chhiye client side thi backend ma
-
         let data = await fetch('http://localhost:7700/insert', {
             method: 'post',
             body: params,
@@ -101,8 +99,7 @@ async function getFormData() {
         });
 
         let data1 = await data.json();
-
-        // backend mathi delink,key mangavi je data1 ma aavi
+        
         if (data1.delLink == 'false') {
             disableLink();
         }

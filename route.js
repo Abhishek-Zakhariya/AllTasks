@@ -1,4 +1,7 @@
-function route(app, conn, md5) {
+const jwtMiddleWare = require('./MiddleWare/checkActiveUser');
+
+require('dotenv').config();
+function route(app, conn, md5, jwt) {
 
     app.get('/register', (req, res) => {
         res.render('index');
@@ -64,7 +67,7 @@ function route(app, conn, md5) {
 
         let email = req.body.email;
         let pass = req.body.pass;
-        let a = false;
+        let matched = false;
 
         let pro = new Promise((resolve, reject) => {
             let sql = `select * from users where email = '${email}'`;
@@ -77,14 +80,14 @@ function route(app, conn, md5) {
         pro.then((result) => {
             let encPass = md5(pass + result[0].salt);
             if (result[0].pass == encPass && result[0].activeUser == 1) {
-                a = true;
-                console.log("matched");
+                matched = true;
+                let token = jwt.sign({ email: email }, process.env.secKey);
+                res.cookie('token', token, { maxAge: 1000 * 10 * 10, httpOnly: true }).json({ code: 200 });
             }
             else {
-                console.log("Unmatched");
-                a = false;
+                matched = false;
+                res.json({ code: 300 });
             }
-            res.send({ a: a })
         });
     });
 
@@ -146,7 +149,7 @@ function route(app, conn, md5) {
         res.send({ key: key, delLink: delLink });
     });
 
-    app.get('/deshboard', async (req, res) => {
+    app.get('/deshboard', jwtMiddleWare, async (req, res) => {
         res.render('deshboard');
     })
 
@@ -1108,6 +1111,7 @@ function route(app, conn, md5) {
         });
     });
 }
+
 function generateSalt() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 

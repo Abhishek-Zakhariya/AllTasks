@@ -68,12 +68,14 @@
 
 
       let data1 = await data.json();
+      console.log(data1.code);
 
-      if (data1.a == true) {
+      if (data1.code == 200) {
         window.location.href = 'http://localhost:7700/deshboard';
-      } else {
-        window.location.href = 'http://localhost:7700/login';
-      }
+      } 
+      // else {
+      //   window.location.href = 'http://localhost:7700/login';
+      // }
     }
   </script>
 </body>
