@@ -7,23 +7,11 @@ let pass = document.getElementById('pass');
 let cpass = document.getElementById('cpass');
 let addr = document.getElementById('addr');
 let submit = document.getElementById('submit');
-pass1 = 0;
-pass1 += 1;
-pass.value = '123' + pass1;
-cpass.value = pass.value;
-addr.value = 'jamnagar'
 let loginbtn = document.getElementById('loginSubmit');
 
 submit.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         submit.click();
-    }
-});
-
-loginbtn.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        console.log("submit pressed");
-        loginbtn.click();
     }
 });
 
@@ -99,7 +87,7 @@ async function getFormData() {
         });
 
         let data1 = await data.json();
-        
+
         if (data1.delLink == 'false') {
             disableLink();
         }
@@ -132,6 +120,33 @@ async function clearFormData() {
 async function disableLink() {
     link.style.display = 'none';
     form.reset();
+}
+
+loginSubmit.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        loginSubmit.click();
+    }
+});
+
+async function loginUser() {
+    let detail = new FormData(form)
+    let params = new URLSearchParams(detail);
+
+    let data = await fetch('http://localhost:7700/login', {
+        method: 'post',
+        body: params,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+    });
+
+
+    let data1 = await data.json();
+    console.log(data1.code);
+
+    if (data1.code == 200) {
+        window.location.href = 'http://localhost:7700/deshboard';
+    }
 }
 
 // ForgotPassword JS File

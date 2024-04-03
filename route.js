@@ -25,8 +25,7 @@ function route(app, conn, md5, jwt) {
         let allow = true;
         let delLink = true;
         let passResult;
-
-        //users select thase 
+ 
         let pro = new Promise((resolve, reject) => {
             let sql1 = `select * from users`;
             conn.query(sql1, function (err, result) {
@@ -34,7 +33,7 @@ function route(app, conn, md5, jwt) {
                 resolve(result);
             });
         });
-        //check krse already email used chhe k ny
+        
         pro.then((result) => {
             result.forEach(val => {
                 if (email == val.email) {

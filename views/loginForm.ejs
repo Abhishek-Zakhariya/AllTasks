@@ -6,6 +6,7 @@
     h2 {
       text-align: center;
     }
+
     span {
       color: rgb(241, 0, 0);
     }
@@ -52,32 +53,8 @@
       </div>
     </form>
   </div>
-  <!-- <script src="/script.js"></script> -->
-  <script>
-    async function loginUser() {
-      let detail = new FormData(form)
-      let params = new URLSearchParams(detail);
-
-      let data = await fetch('http://localhost:7700/login', {
-        method: 'post',
-        body: params,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        }
-      });
-
-
-      let data1 = await data.json();
-      console.log(data1.code);
-
-      if (data1.code == 200) {
-        window.location.href = 'http://localhost:7700/deshboard';
-      } 
-      // else {
-      //   window.location.href = 'http://localhost:7700/login';
-      // }
-    }
-  </script>
+  <script src="/script.js"></script>
+ 
 </body>
 
 </html>
