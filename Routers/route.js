@@ -8,6 +8,13 @@ const insertUser = require('../Controller/insertUser');
 const welcomeUser = require('../Controller/welcome');
 const forgotPass = require('../Controller/forgotPass');
 const regeneratePass = require('../Controller/regeneratePass');
+const tictactoe = require('../Controller/jsAssignments/ticTacToe');
+const dyTable = require('../Controller/jsAssignments/dyTable');
+const kukuCube = require('../Controller/jsAssignments/kookuCube');
+const ehya = require('../Controller/htmlAssignments/ehya');
+const awan = require('../Controller/htmlAssignments/awan');
+const HireX = require('../Controller/htmlAssignments/hireX');
+const JobAppForm = require('../Controller/htmlAssignments/jobAppForm')
 
 
 const router = express.Router();
@@ -17,8 +24,16 @@ router.post('/insert', insertUser);
 router.get('/welcome/:key', welcomeUser);
 router.post('/login', login);
 router.get('/forgotPass', forgotPass);
-router.get('/regeneratePass',regeneratePass);
+router.get('/regeneratePass', regeneratePass);
 router.get('/deshboard', jwtMiddleWare, deshboard);
+router.get('/tic_tac_toe', tictactoe);
+router.get('/DyTable', dyTable);
+router.get('/kukuCube', kukuCube);
+router.get('/ehya', ehya);
+router.get('/AwanHoster', awan);
+router.get('/HireX', HireX);
+router.get('/JobAppForm',JobAppForm)
+
 
 
 // app.get('/', (req, res) => {
