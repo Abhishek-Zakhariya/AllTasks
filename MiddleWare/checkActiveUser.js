@@ -12,7 +12,7 @@ const jwtMiddleWare = async (req, res, next) => {
             next();
         })
     }
-    else{
+    else {
         res.redirect('/');
     }
 }

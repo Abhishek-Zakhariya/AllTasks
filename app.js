@@ -1,34 +1,23 @@
 const express = require('express');
-const mysql = require('mysql');
-const jwt = require('jsonwebtoken');
+// const mysql = require('mysql');
+// const jwt = require('jsonwebtoken');
 const app = express();
-const route = require('./route');
-const md5 = require("blueimp-md5");
+// const md5 = require("blueimp-md5");
 const cookieParser = require('cookie-parser');
-
 app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/public/Tasks'));
-app.use(express.static(__dirname + '/public/FetchAPI_JsonPlaceHolder'));
-app.use(express.static(__dirname + '/public/Attendence'));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public/Tasks'));
+// app.use(express.static(__dirname + '/public/FetchAPI_JsonPlaceHolder'));
+// app.use(express.static(__dirname + '/public/Attendence'));
 app.use(cookieParser());
 
-const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'abhi2509',
-    database: 'db_AllTasks'
-});
+const route = require('./Routers/route');
+// route(app, conn, md5, jwt);
 
-conn.connect(function (err) {
-    if (err) throw err;
-});
-
-route(app, conn, md5, jwt);
+app.use('/', route);
 
 app.listen(7700, function (err) {
     if (err) {
