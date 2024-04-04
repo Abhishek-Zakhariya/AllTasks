@@ -543,14 +543,14 @@ async function insertData() {
     let detail = new FormData(form);
     let params = new URLSearchParams(detail);
 
-    let data = await fetch('http://localhost:9500/insert', {
+    let data = await fetch('http://localhost:7700/insertAjax', {
         method: 'POST',
         body: params,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         }
     });
-    let msg = document.getElementById('msg')
+    let msg = document.getElementById('msg');
     msg.style.display = 'block';
     msg.innerHTML = 'Data Inserted Successflly!';
     // }
@@ -568,7 +568,7 @@ async function updateData() {
     msg1.style.display = 'block';
     msg1.innerHTML = 'Data Updated Successflly!';
 
-    let data = await fetch('http://localhost:9500/update', {
+    let data = await fetch('http://localhost:7700/update', {
         method: 'POST',
         body: params,
         headers: {

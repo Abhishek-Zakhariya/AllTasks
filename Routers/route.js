@@ -21,6 +21,13 @@ const attendence = require('../Controller/nodeJsAssignments/attendence/attendenc
 const pagination = require('../Controller/nodeJsAssignments/pagination/pagination');
 const dycomponent = require('../Controller/nodeJsAssignments/dyComponetGenretor/components');
 const delimeterSearch = require('../Controller/nodeJsAssignments/delimeterSearch');
+const renderForm = require('../Controller/nodeJsAssignments/crudOps/renderForm');
+const insertData = require('../Controller/nodeJsAssignments/crudOps/insertData');
+const fetchdata = require('../Controller/nodeJsAssignments/crudOps/fetchData');
+const crudAjax = require('../Controller/nodeJsAssignments/crudAjax/renderForm');
+const insertAjax = require('../Controller/nodeJsAssignments/crudAjax/insertdata');
+const fetchAjax = require('../Controller/nodeJsAssignments/crudAjax/fetchdata');
+const updateAjax = require('../Controller/nodeJsAssignments/crudAjax/updatedata');
 
 const router = express.Router();
 router.get('/', loginForm);
@@ -44,6 +51,13 @@ router.get('/Attendence', attendence);
 router.get('/Pagination', pagination);
 router.get('/DyComponent',dycomponent);
 router.get('/delimeterSearch',delimeterSearch);
+router.get('/Crud',renderForm);
+router.post('/insertdata',insertData);
+router.get('/edit',fetchdata);
+router.get('/CurdAjax',crudAjax);
+router.post('/insertAjax',insertAjax);
+router.get('/editAjax/:id',fetchAjax);
+router.post('/update',updateAjax);
 
 
 // app.get('/', (req, res) => {
