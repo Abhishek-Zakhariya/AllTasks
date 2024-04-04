@@ -21,7 +21,7 @@ const login = async (req, res) => {
     if (result[0].pass == encPass && result[0].activeUser == 1) {
       matched = true;
       let token = jwt.sign({ email: email }, process.env.secKey);
-      res.cookie('token', token, { maxAge: 1000 * 10 * 10, httpOnly: true }).json({ code: 200 });
+      res.cookie('token', token, { maxAge: 1000 * 60 * 60, httpOnly: true }).json({ code: 200 });
     }
     else {
       matched = false;

@@ -9,11 +9,13 @@ let addr = document.getElementById('addr');
 let submit = document.getElementById('submit');
 let loginbtn = document.getElementById('loginSubmit');
 
+
 submit.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         submit.click();
     }
 });
+
 
 // async function validateForm() {
 //     function errMsg(control, msg, color) {

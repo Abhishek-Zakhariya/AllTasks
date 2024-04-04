@@ -7,6 +7,7 @@ const deshboard = require('../Controller/deshboard');
 const insertUser = require('../Controller/insertUser');
 const welcomeUser = require('../Controller/welcome');
 const forgotPass = require('../Controller/forgotPass');
+const logOut = require('../Controller/logOut');
 const regeneratePass = require('../Controller/regeneratePass');
 const tictactoe = require('../Controller/jsAssignments/ticTacToe');
 const dyTable = require('../Controller/jsAssignments/dyTable');
@@ -28,6 +29,7 @@ const crudAjax = require('../Controller/nodeJsAssignments/crudAjax/renderForm');
 const insertAjax = require('../Controller/nodeJsAssignments/crudAjax/insertdata');
 const fetchAjax = require('../Controller/nodeJsAssignments/crudAjax/fetchdata');
 const updateAjax = require('../Controller/nodeJsAssignments/crudAjax/updatedata');
+
 
 const router = express.Router();
 router.get('/', loginForm);
@@ -58,6 +60,7 @@ router.get('/CurdAjax',crudAjax);
 router.post('/insertAjax',insertAjax);
 router.get('/editAjax/:id',fetchAjax);
 router.post('/update',updateAjax);
+router.get('/logout',logOut);
 
 
 // app.get('/', (req, res) => {

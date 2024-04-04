@@ -130,3 +130,7 @@ input[type=reset]:hover {
     display: flex;
     justify-content: space-around;
 }
+
+#logout{
+    cursor: pointer;
+}
