@@ -1,12 +1,8 @@
 const express = require('express');
-// const mysql = require('mysql');
-// const jwt = require('jsonwebtoken');
 const app = express();
-// const md5 = require("blueimp-md5");
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'ejs');
 app.use(express.json());
-app.use(express.urlencoded());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 // app.use(express.static(__dirname + '/public/Tasks'));

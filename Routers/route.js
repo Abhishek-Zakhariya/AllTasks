@@ -14,8 +14,13 @@ const kukuCube = require('../Controller/jsAssignments/kookuCube');
 const ehya = require('../Controller/htmlAssignments/ehya');
 const awan = require('../Controller/htmlAssignments/awan');
 const HireX = require('../Controller/htmlAssignments/hireX');
-const JobAppForm = require('../Controller/htmlAssignments/jobAppForm')
-
+const JobAppForm = require('../Controller/htmlAssignments/jobAppForm');
+const fetchApi = require('../Controller/nodeJsAssignments/jsonPlaceholderAPI/fetchApi');
+const singlePost = require('../Controller/nodeJsAssignments/jsonPlaceholderAPI/singlePost');
+const attendence = require('../Controller/nodeJsAssignments/attendence/attendence');
+const pagination = require('../Controller/nodeJsAssignments/pagination/pagination');
+const dycomponent = require('../Controller/nodeJsAssignments/dyComponetGenretor/components');
+const delimeterSearch = require('../Controller/nodeJsAssignments/delimeterSearch');
 
 const router = express.Router();
 router.get('/', loginForm);
@@ -32,8 +37,13 @@ router.get('/kukuCube', kukuCube);
 router.get('/ehya', ehya);
 router.get('/AwanHoster', awan);
 router.get('/HireX', HireX);
-router.get('/JobAppForm',JobAppForm)
-
+router.get('/JobAppForm', JobAppForm);
+router.get('/FetchAPI', fetchApi);
+router.get('/singlepost/:id', singlePost);
+router.get('/Attendence', attendence);
+router.get('/Pagination', pagination);
+router.get('/DyComponent',dycomponent);
+router.get('/delimeterSearch',delimeterSearch);
 
 
 // app.get('/', (req, res) => {

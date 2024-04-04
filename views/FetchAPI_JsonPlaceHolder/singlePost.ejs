@@ -43,6 +43,7 @@
     async function fetchApi() {
       const response = await fetch(url);
       const data = await response.json();
+      console.log(data);
       return data;
     }
 
@@ -53,7 +54,7 @@
 
     async function post_dislay() {
       const tbl = document.getElementById('tbl')
-      let data = await fetchApi()
+      let data = await fetchApi();
 
       let li = '';
 
