@@ -1,4 +1,4 @@
-const conn = require("../../../config/connection");
+const conn = require("../../config/connection");
 
 const pagination = (req, res) => {
   let pagesize = 10;

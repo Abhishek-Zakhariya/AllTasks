@@ -1,9 +1,10 @@
 const conn = require("../config/connection");
 const md5 = require("blueimp-md5");
 const jwt = require('jsonwebtoken');
-
+const logger = require('../logger');
 const login = async (req, res) => {
 
+  console.log(req.body);
   let email = req.body.email;
   let pass = req.body.pass;
   let matched = false;

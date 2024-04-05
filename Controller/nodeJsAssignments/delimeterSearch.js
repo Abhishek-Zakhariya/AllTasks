@@ -4,6 +4,7 @@ const delimeterSearch = (req, res) => {
   let fetchData1 = req.query.query || '';
   let fetchData = req.query.query || '';
 
+
   let specialChar = [
     '_',
     '^',
@@ -17,7 +18,6 @@ const delimeterSearch = (req, res) => {
   fetchData = fetchData.replace(/['$']/g, ' mobileno ');
 
   let newdata = fetchData.split(' ');
-  console.log(newdata);
 
   let obj = {};
   for (let i = 0; i < newdata.length - 1; i += 2) {

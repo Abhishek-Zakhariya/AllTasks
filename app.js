@@ -5,13 +5,14 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
-// app.use(express.static(__dirname + '/public/Tasks'));
-// app.use(express.static(__dirname + '/public/FetchAPI_JsonPlaceHolder'));
-// app.use(express.static(__dirname + '/public/Attendence'));
 app.use(cookieParser());
-
 const route = require('./Routers/route');
-// route(app, conn, md5, jwt);
+const winston = require('winston');
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [new winston.transports.Console()],
+});
 
 app.use('/', route);
 

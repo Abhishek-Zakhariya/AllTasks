@@ -1,9 +1,10 @@
 const md5 = require("blueimp-md5");
+
 const conn = require("../config/connection");
 const insertUser = (req, res) => {
   
   let body = req.body;
-  console.log(body);
+  logger.info(body);
   let fname = body.fname;
   let lname = body.lname;
   let email = body.email;
