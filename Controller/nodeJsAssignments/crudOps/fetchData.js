@@ -1,5 +1,6 @@
 const conn = require('../../../config/connection');
 
+try{
 const fetchData = async(req, res) => {
 
   let result = await fetchBasicDetail(req, res);
@@ -106,5 +107,9 @@ const fetchData = async(req, res) => {
       return result;
     });
   }
+}
+}
+catch(err){
+  console.log(err);
 }
 module.exports = fetchData;
