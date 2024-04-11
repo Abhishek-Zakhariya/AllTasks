@@ -1,6 +1,6 @@
 const md5 = require("blueimp-md5");
-
 const conn = require("../config/connection");
+try{
 const insertUser = (req, res) => {
   
   let body = req.body;
@@ -75,4 +75,8 @@ function generateLink() {
   }
   return key;
 }
+}catch(err){
+console.log(err);
+}
+  
 module.exports = insertUser;
