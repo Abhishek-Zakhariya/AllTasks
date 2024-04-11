@@ -1,4 +1,6 @@
 const conn = require('../../../config/connection');
+
+try{
 const insertAjax = (req, res) => {
 
   // let emp_id = req.body.emp_id;
@@ -181,6 +183,9 @@ const insertAjax = (req, res) => {
   }
 
 }
-
+}
+catch(err){
+  console.log(err);
+}
 
 module.exports = insertAjax;
