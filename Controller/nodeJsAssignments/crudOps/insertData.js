@@ -1,5 +1,5 @@
 const conn = require('../../../config/connection');
-
+try{
 const insertData = (req, res) => {
 
   let fname = req.body.fname;
@@ -182,6 +182,7 @@ function TechTable(req, res, emp_id) {
     console.log("Technology Record Inserted Successfully..");
   })
 }
-
-
+}catch(err){
+  console.log(err);
+}
 module.exports = insertData;
