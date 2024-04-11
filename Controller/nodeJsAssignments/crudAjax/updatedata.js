@@ -1,5 +1,5 @@
 const conn = require('../../../config/connection');
-
+try{
 const updateData = async (req, res) => {
   let emp_id = req.body.id;
   await updateBasicDetail(req, res);
@@ -182,7 +182,10 @@ function updatePreferenceDetail(req, res, emp_id) {
     console.log("Preference Records Updated Successfully..");
   })
 }
-
+}
+catch(err){
+  console.log(err);
+}
 
 
 module.exports = updateData
