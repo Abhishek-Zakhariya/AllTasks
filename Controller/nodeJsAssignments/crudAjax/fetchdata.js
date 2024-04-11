@@ -1,5 +1,6 @@
 const conn = require('../../../config/connection');
 
+try{
 const fetchAjax = async (req, res) => {
   let emp_id = req.params.id;
   let result = await fetchBasicDetail(req, res);
@@ -117,5 +118,8 @@ async function fetchpreferenceData(req, res) {
     return result;
   })
 }
-
+}
+catch(err){
+  console.log(err);
+}
 module.exports = fetchAjax;
